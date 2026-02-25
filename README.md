@@ -1,5 +1,16 @@
 # CaD-HSL
-Forecasting technology trends from large collections of project documents is essential for strategic planning.However, existing approaches often treat technological factors as isolated time series or rely on static pairwise networks, failing to capture the evolving high-order correlations and dynamic causal mechanisms behind technology trend shifts. To address these limitations, we present CaD-HSL, an interactive information processing system for interpretable technology trend forecasting. CaD-HSL transforms unstructured project descriptions into a sequence of dynamic hypergraphs, where each project induces a high-order technology co-occurrence relation and learns a sparse directed causal graph that captures predictive dependencies among technologies over time.To make forecasts explainable, CaD-HSL integrates a GraphRAG module that retrieves upstream causal drivers from the learned graph and grounds LLM explanations on structured evidence, including driver sets, edge strengths, and forecast signals.The web-based interface enables users to explore global causal structures, inspect local ego-networks, compare univariate and causal-driven forecasts, and automatically generate attribution reports for trend shifts. Empirical evaluation shows that CaD-HSL reduces MSE by 19% compared to univariate baselines while providing transparent, evidence-grounded insights for decision-makers.
-
-## Usage
-Detailed demonstration is shown in demo.mp4.
+This repository contains the source code and demo video for 《CaD-HSL: A Causal-Driven Hypergraph Framework with
+GraphRAG for Explainable Technology Trend Prediction》.
+## Demo Video
+The video shows the four major modules of our system:
+### Global Causal Structure
+Users can view the global causal graph which shows how individual technologies interact with related fields.By tuning the threshold, users are able to dynamically adjust the edge connections in the graph, thereby effectively controlling the sparsity of the network.
+### Local Ego-Network
+### Trend Forecasting
+### Evaluation Metrics Module
+This module provides a quantitative evaluation dashboard to assess the performance of the CaD-HSL model against the baseline (XGB).
+- Key Performance Indicators (KPIs): Displays core metrics like MAPE, RMSE, Win Rate, and P-value, with clear improvement indicators.
+- Error Comparison: Visualizes the error distribution between the baseline and CaD-HSL, showing where our model performs better.
+- Causal Impact Analysis: Analyzes how the number of causal drivers influences model improvement.
+- Deep Evaluation Report: Provides a detailed breakdown of all metrics, including stability (error std).
+- Performance Leaderboard: Ranks the top 20 technologies by their MAE improvement percentage, highlighting the most impactful use cases.
